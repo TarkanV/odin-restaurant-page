@@ -1,6 +1,7 @@
 .header {
   display: grid;
   margin-top: 2rem;
+  margin: 0 10rem;
   grid-template-columns: repeat(2, 1fr);
 }
 .header ul {
@@ -11,20 +12,70 @@
   padding: 0;
   font-weight: 500;
 }
+.header li {
+  cursor: pointer;
+  position: relative;
+}
+.header li::before {
+  position: absolute;
+  content: "";
+  border-top: 3px solid black;
+  width: 0%;
+  top: -0.7rem;
+}
+.header li.active::before {
+  width: 100%;
+  transition: 0.3s;
+}
+.header li.active {
+  font-weight: bold;
+  transition: 0.1s;
+}
 .header .logo {
   justify-self: end;
 }
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  margin: 0 10rem;
+  margin: 0;
   font-size: 1.7rem;
+  background-color: hsl(168, 45%, 98%);
 }
-body #content .showcase {
+body .tab:not(.active) {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  opacity: 0%;
+}
+body .tab {
+  margin: 0 10rem;
+  opacity: 100%;
+  transition: 0.3s;
+}
+body #home .showcase {
   width: 100%;
   margin: 0 auto;
+  overflow: hidden;
+  border-radius: 30px;
 }
-body #content .showcase img {
+body #home .showcase img {
   width: 100%;
   height: auto;
+}
+
+.footer {
+  font-size: 1rem;
+  background-color: beige;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+#menu {
+  background-color: red;
+}
+
+#contact {
+  background-color: blue;
 }/*# sourceMappingURL=styles.css.map */
