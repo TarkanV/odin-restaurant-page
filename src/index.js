@@ -1,7 +1,7 @@
 /* eslint-disable linebreak-style */
 import loadHome from './home-load';
 import loadMenu from './menu-load';
-import loadContact from './contact-load';
+import loadAbout from './about-load';
 import tool from "./element-tool"
 
 const createElement = tool.createElement;
@@ -26,8 +26,8 @@ function loadHeader(){
     navMenu.id = "menu-nav";
     navMenu.textContent = "Menu";
     const navContact = createElement("li", nav);
-    navContact.id = "contact-nav";
-    navContact.textContent = "Contact";
+    navContact.id = "about-nav";
+    navContact.textContent = "About";
     const logo = createElement("h3", header, "logo");
     logo.textContent = "LOGO";
     return header;
@@ -43,7 +43,7 @@ function loadFooter(){
 const header = loadHeader();
 const home = loadHome(content);
 const menu = loadMenu();
-const contact = loadContact();
+const about = loadAbout();
 let currTab = home;
 let currNav = header.querySelector("#home-nav");
 
@@ -70,7 +70,7 @@ function switchTab(...tabs){
     }
     );
 }
-switchTab(home, menu, contact);
+switchTab(home, menu, about);
 loadFooter();
 
 
