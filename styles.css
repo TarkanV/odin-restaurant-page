@@ -66,16 +66,8 @@ body #home .showcase img {
 .footer {
   font-size: 1rem;
   background-color: beige;
-  position: absolute;
+  position: fixed;
   bottom: 0;
-  width: 100%;
+  width: 100vw;
   text-align: center;
-}
-
-#menu {
-  background-color: red;
-}
-
-#contact {
-  background-color: blue;
 }/*# sourceMappingURL=styles.css.map */
